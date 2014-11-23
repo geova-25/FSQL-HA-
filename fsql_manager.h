@@ -46,7 +46,7 @@ public:
 
 
 private:
-    const char* directorioDe_fsql="/home/sebastian/Escritorio/"; // se inicializa
+    const char* directorioDe_fsql="/home/giovanni/Escritorio/BaseDeDatos/"; // se inicializa
 
     FileManager* file_manager = new FileManager();
     RegisterManager register_manager;

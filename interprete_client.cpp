@@ -9,7 +9,7 @@
 #include "SocketException.h"
 #include <string>
 
-Interprete_Cliente::Interprete_Cliente(FSQL_Manager*)
+Interprete_Cliente :: Interprete_Cliente()
 {
 
 
@@ -126,6 +126,7 @@ void Interprete_Cliente::crear_grant(string text){
     const char* token = result.c_str();
 
     if (bol_grant && iniciar){
+        enviar(token);
         iniciar=false;
     }
     if(strcmp(text.c_str(),"grant")==0){
@@ -158,9 +159,8 @@ void Interprete_Cliente::crear_revoke(string text){
     std::string result = std::string(text);
     const char* token = result.c_str();
 
-
-
     if (bol_revoke && iniciar){
+        enviar(token);
         iniciar=false;
     }
     if(strcmp(text.c_str(),"revoke")==0){
@@ -731,6 +731,7 @@ void Interprete_Cliente::crear_Update(string text){
                bol_Condicion=true;
            }
            if(strcmp(text.c_str(),"where_update")==0 || strcmp(text.c_str(),">")==0 && bol_update){
+               enviar(token);
                bol_columna=true;                  //bandera para las condiciones
            }
 
@@ -848,9 +849,10 @@ void Interprete_Cliente::conection(string text){
                 std::string data;
                 new_sock.reciveMessage(data);
                 std::cout << data << std::endl;
-                std::string data2;
-                data2 = ipmia;
-                new_sock.sendMessage(data2);
+                interprete_server->escuchar(data);
+                //std::string data2;
+                //data2 = ipmia;
+                //new_sock.sendMessage(data2);
             }
             }
             catch ( SocketException& ) {}
@@ -881,7 +883,7 @@ void Interprete_Cliente:: enviar(const char* token){
       {
 
         //std::string en = envio;
-        client_socket->sendMessage(en +" ");
+        client_socket->sendMessage(en +".");
         //client_socket.reciveMessage(reply);
 
 

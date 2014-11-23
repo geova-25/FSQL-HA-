@@ -44,11 +44,11 @@ string texto = "nombre.int.4452.cedula.string.34";
 
     //cout <<cubeta <<endl;
 
+    FSQL_Manager sf ;
 
-    FSQL_Manager  fsql_Manager;
-    fsql_Manager.setDirectory("/home/sebastian/Escritorio/BaseDeDatos/");
+    sf.setDirectory("/home/sebastian/Escritorio/BaseDeDatos/");
 
-    Interprete_Cliente* interprete_cliente = new Interprete_Cliente(&fsql_Manager);
+    Interprete_Cliente* interprete_cliente = new Interprete_Cliente();
 
 
     interprete_cliente->run();

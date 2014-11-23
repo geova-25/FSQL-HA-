@@ -10,16 +10,16 @@ class Interprete_Cliente
 {
 public:
 
-    Interprete_Cliente(FSQL_Manager*);
+    Interprete_Cliente();
     void run();
 
 
 
 
 private:
-     FSQL_Manager* fsql_manager;
 
-    InterpreteServer* interprete_server = new InterpreteServer(fsql_manager);
+
+    InterpreteServer* interprete_server = new InterpreteServer();
     //  FSQL_Manager* fsql_manager;
         ClientSocket* client_socket;
 
@@ -52,9 +52,14 @@ private:
         bool bol_to=false;
 
         //conction
-        int serverPort = 7777;
-        std::string ipDelServer = "172.26.104.25";
+        int serverPort = 40011;
+        std::string ipDelServer = "192.168.0.104";
         std::string ipmia="172.26.104.25";
+
+        //192.168.0.110     sebas
+        //192.168.0.104     giova
+        //192.168.0.101     mia
+
         bool flag=false;
 
         bool banderaCliente = true;

@@ -30,7 +30,7 @@ public:
 private:
     const int MAXIPNAME = 200;
     const int MAXCONNECTIONSALLOWED = 5;
-    const int MAXRECIVECHARACTERSALLOWED = 500;
+    const int MAXRECIVECHARACTERSALLOWED = 1000;
     int descriptorOfTheSock;
     sockaddr_in addresOfTheSocket;
 };

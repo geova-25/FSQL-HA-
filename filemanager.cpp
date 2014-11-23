@@ -12,8 +12,13 @@ void FileManager :: generate_binaryFile(){
     const char* extBin = ".bin";
     std::string result = std::string(directory) +std::string(nameOfFile) + std::string(extBin);
     const char * FileNameBin = result.c_str();
-    ofstream fe(FileNameBin); //Creamos un archivo bin nuevo para una tabla nueva si no existe
-    fe.close();
+    fstream fsr(FileNameBin, std::ios::out | std::ios::in | std::ios::binary );
+    if(fsr){
+        ofstream fe(FileNameBin); //Creamos un archivo bin nuevo para una tabla nueva si no existe
+        fe.close();
+        cout<<"Se creo nuevo archivo binario"<<endl;
+    }
+    fsr.close();
 }
 
 void FileManager :: initHeader(){

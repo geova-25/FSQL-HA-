@@ -280,10 +280,7 @@ void InterpreteServer :: escuchar(string data_recibida ){
 
                  }
               string variable_1= lista[0];     // saca la columna
-cout<<"variable_1 : " <<variable_1<<endl;
               fsql_manager2.drop_user(variable_1.c_str());
-
-
               for (int j=0; j<49; j++){
                   lista[j]="0";             //Inicia lasta principal con ceros string
               }

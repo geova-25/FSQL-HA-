@@ -179,6 +179,7 @@ bool FSQL_Manager :: DeleteFrom(const char* filename,  Vector3d<const char*, con
 int FSQL_Manager:: logic(){
 
 
+
     createFile_Users_And_Permissions();
     create_user("sebas1995", "1111");
     create_user("Ruben", "2222");
@@ -189,7 +190,7 @@ int FSQL_Manager:: logic(){
 
 
 
-  drop_user("Will");
+  //drop_user("Ruben");
     grant("update" , "casas", "sebas1995");
      grant("update" , "propiedades", "Ruben");
 
@@ -204,7 +205,7 @@ int FSQL_Manager:: logic(){
    revoke("delete" , "casas", "sebas1995");
 
 
-  // Select_asterisco(Nombre_Archivo_usuario);
+  Select_asterisco(Nombre_Archivo_usuario);
    //Select_asterisco(Nombre_archivo_permisos);
 
 
